@@ -6,10 +6,32 @@
 
 import { useState } from "react";
 
+const[listaPedidos, setListaPedidos] = useState([]);
+
+const adicionarItemPedidos = (objeto) => {
+    setListaPedidos([...listaPedidos,objeto])
+}
 export default function Home() {
   return (
     <div>
-       
+       <h1>Tenis em Promoção</h1>
+       {
+ listaTenis.map((produto)=>
+ <div key={produto.id}>
+ <p>{produto.nome}</p>
+ <p>{produto.preco}</p>
+ <button onClick={()=> adicionarItemPedidos(produto)}>Selecionar</button>
+ </div>
+ )
+}
+{
+ listaTenis.map((produto)=>
+ <div key={produto.id}>
+ <p>{produto.nome}</p>
+ <p>{produto.preco}</p>
+ </div>
+ )
+}
     </div>
    
   );

@@ -5,11 +5,30 @@
 // Exemplo: `setListaPedidos(listaAux);`
 
 export default function Home() {
-
+const adicionarItemPedidos = (objeto) => {
+    setListaPedidos([...listaPedidos,objeto])
+}
+const removerPedido = (id) => {
+let remover = false;
+let listaAux = listaPedidos.filter((produto) => {
+  if (remover===false){
+    if (produto.id !== id){
+      return produto
+    }else {
+      remover = true
+      return null
+    }
+  }else{
+    return produto
+  }
+}
+);
+setListaPedidos(listaAux);
   return (
     <div>
        
     </div>
    
   );
+}
 }

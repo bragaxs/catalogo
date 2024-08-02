@@ -10,7 +10,25 @@ export default function Home() {
 
   return (
     <div>
+         <h1>Tenis em Promoção</h1>
          
+         {
+ listaTenis.map((produto)=>
+ <div key={produto.id}>
+ <p>{produto.nome}</p>
+ <p>{produto.preco}</p>
+ </div>
+ )
+} 
+{
+ listaTenis.map((produto)=>
+ <div key={produto.id}>
+ <p>{produto.nome}</p>
+ <p>{produto.preco}</p>
+ <button onClick={()=> removerPedido(produto.id)}>Remover</button>
+ </div>
+ )
+}
     </div>
   );
 }
